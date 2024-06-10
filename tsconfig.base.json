@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tasks-app/services": ["libs/services/src/index.ts"],
+      "@tasks-app/store-react-query": ["libs/store-react-query/src/index.ts"],
+      "@tasks-app/store-rtk": ["libs/store-rtk/src/index.ts"],
+      "@tasks-app/tasks": ["libs/features/tasks/src/index.ts"],
+      "@tasks-app/ui": ["libs/ui/src/index.ts"],
+      "@tasks-app/utils-js": ["libs/utils-js/src/index.ts"],
+      "@tasks-app/utils-react": ["libs/utils-react/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
