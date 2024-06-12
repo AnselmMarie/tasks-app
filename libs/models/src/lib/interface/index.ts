@@ -1,10 +1,11 @@
 export interface GenericObjectInter {
-  [k: string]:
+  readonly [k: string]:
     | boolean
     | number
     | string
     | Array<GenericObjectInter | string | number>
-    | Record<string, unknown>;
+    | Record<string, unknown>
+    | null;
 }
 
 export interface GenericArrayInter {
@@ -12,5 +13,5 @@ export interface GenericArrayInter {
 }
 
 export interface InstantiableInter<T = unknown> {
-  new (...args: Array<unknown>): T;
+  new (...args: ReadonlyArray<unknown>): T;
 }

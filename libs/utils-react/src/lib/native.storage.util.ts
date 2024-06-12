@@ -4,7 +4,7 @@ export const setStorageItemUtil = async (key: string, value: string) => {
   await SecureStore.setItemAsync(key, value);
 };
 
-export const getStorageItemUtil = async (key: string) => {
+export const getStorageItemUtil = async (key: string): Promise<string | null> => {
   return await SecureStore.getItemAsync(key);
 };
 

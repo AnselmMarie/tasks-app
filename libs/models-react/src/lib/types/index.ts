@@ -1,3 +1,7 @@
 import { ReactElement } from 'react';
 
-export type GenericElementReturnType = (...params: any) => ReactElement;
+import { GenericUnknownType } from '@tasks-app/models';
+
+export type GenericElementReturnType = (
+  ...params: ReadonlyArray<GenericUnknownType>
+) => ReactElement;
