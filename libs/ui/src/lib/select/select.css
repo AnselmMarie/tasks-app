@@ -1,0 +1,7 @@
+.select-wrapper {
+  /* border-radius: var(--border-radius-base); */
+}
+
+.select-fill-solid {
+  color: var(--color-secondary);
+}
