@@ -11,6 +11,7 @@
     }
   ],
   "compilerOptions": {
+    "typeRoots": ["src", "src/models/express.d.ts"],
     "esModuleInterop": true
   }
 }

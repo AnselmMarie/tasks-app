@@ -48,6 +48,8 @@
     "@testing-library/react": "15.0.6",
     "@testing-library/react-native": "~12.5.0",
     "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/jest": "^29.4.0",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/lodash": "^4.17.5",
@@ -104,6 +106,7 @@
     "@types/luxon": "^3.4.2",
     "axios": "^1.6.0",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "drizzle-orm": "^0.31.2",
     "expo": "~51.0.8",
     "expo-secure-store": "~13.0.1",
@@ -116,7 +119,6 @@
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "pg": "^8.12.0",
-    "postgres": "^3.4.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "^7.51.5",
@@ -127,6 +129,7 @@
     "react-native-web": "~0.19.11",
     "tamagui": "^1.100.3",
     "tslib": "^2.3.0",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "zod": "^3.23.8"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "id": "245064b8-ace1-4cd4-a568-2c643dff22f7",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "684c4af1-35e1-4d78-85e4-53499a4daeaa",
+  "prevId": "245064b8-ace1-4cd4-a568-2c643dff22f7",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -21,12 +21,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp(3) with time zone",
@@ -43,17 +37,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "story_user_id_user_id_fk": {
-          "name": "story_user_id_user_id_fk",
-          "tableFrom": "story",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -157,12 +141,6 @@
           "notNull": true,
           "default": "gen_random_uuid()"
         },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
         "refresh_token": {
           "name": "refresh_token",
           "type": "varchar(255)",
@@ -191,17 +169,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "user_refresh_token_user_id_user_id_fk": {
-          "name": "user_refresh_token_user_id_user_id_fk",
-          "tableFrom": "user_refresh_token",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },

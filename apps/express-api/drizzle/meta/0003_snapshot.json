@@ -1,6 +1,6 @@
 {
-  "id": "245064b8-ace1-4cd4-a568-2c643dff22f7",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "bd202aa9-03f0-4aab-957e-cbfd79620299",
+  "prevId": "54009ed4-6601-4a4b-8fc4-afa7719106e9",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -21,12 +21,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp(3) with time zone",
@@ -43,17 +37,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "story_user_id_user_id_fk": {
-          "name": "story_user_id_user_id_fk",
-          "tableFrom": "story",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -95,18 +79,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "story_id": {
-          "name": "story_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
-        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp(3) with time zone",
@@ -123,26 +95,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "task_user_id_user_id_fk": {
-          "name": "task_user_id_user_id_fk",
-          "tableFrom": "task",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
-        "task_story_id_story_id_fk": {
-          "name": "task_story_id_story_id_fk",
-          "tableFrom": "task",
-          "tableTo": "story",
-          "columnsFrom": ["story_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -156,12 +109,6 @@
           "primaryKey": true,
           "notNull": true,
           "default": "gen_random_uuid()"
-        },
-        "user_id": {
-          "name": "user_id",
-          "type": "uuid",
-          "primaryKey": false,
-          "notNull": true
         },
         "refresh_token": {
           "name": "refresh_token",
@@ -191,17 +138,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "user_refresh_token_user_id_user_id_fk": {
-          "name": "user_refresh_token_user_id_user_id_fk",
-          "tableFrom": "user_refresh_token",
-          "tableTo": "user",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
@@ -249,38 +186,7 @@
           "default": "now()"
         }
       },
-      "indexes": {
-        "user_email_key": {
-          "name": "user_email_key",
-          "columns": [
-            {
-              "expression": "email",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": true,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        },
-        "user_id_key": {
-          "name": "user_id_key",
-          "columns": [
-            {
-              "expression": "id",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": true,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        }
-      },
+      "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

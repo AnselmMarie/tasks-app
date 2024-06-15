@@ -1,6 +1,6 @@
 {
-  "id": "245064b8-ace1-4cd4-a568-2c643dff22f7",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "a95fede5-3ade-4d41-a443-fb83e932bad0",
+  "prevId": "86b821c3-cd45-4f5b-af6c-7b9f7a7dc532",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -250,26 +250,11 @@
         }
       },
       "indexes": {
-        "user_email_key": {
-          "name": "user_email_key",
+        "user_email_unique": {
+          "name": "user_email_unique",
           "columns": [
             {
               "expression": "email",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": true,
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        },
-        "user_id_key": {
-          "name": "user_id_key",
-          "columns": [
-            {
-              "expression": "id",
               "isExpression": false,
               "asc": true,
               "nulls": "last"

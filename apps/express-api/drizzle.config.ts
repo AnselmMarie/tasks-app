@@ -1,9 +1,4 @@
-import { findEnvUtil } from '@tasks-app/utils';
-import * as dotenv from 'dotenv';
-
 import type { Config } from 'drizzle-kit';
-
-dotenv.config({ path: findEnvUtil() });
 
 export default {
   dialect: 'postgresql',
@@ -15,7 +10,8 @@ export default {
     user: process.env.DATABASE_USER || '',
     password: process.env.DATABASE_PASSWORD || '',
     database: process.env.DATABASE_NAME || '',
+    ssl: false,
   },
-  verbose: false, // Print all statements
+  verbose: true, // Print all statements
   strict: true,
 } satisfies Config;
