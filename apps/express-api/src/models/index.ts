@@ -7,4 +7,5 @@ interface RepositoryWhereProps {
 export interface RepositoryGeneralProps {
   where?: RepositoryWhereProps;
   data?: any;
+  with?: any;
 }

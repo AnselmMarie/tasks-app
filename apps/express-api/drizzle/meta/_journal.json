@@ -43,6 +43,13 @@
       "when": 1718484747541,
       "tag": "0005_useful_juggernaut",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1718563970471,
+      "tag": "0006_eager_sinister_six",
+      "breakpoints": true
     }
   ]
 }

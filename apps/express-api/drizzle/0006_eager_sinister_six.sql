@@ -1,0 +1,1 @@
+ALTER TABLE "task" ALTER COLUMN "story_id" DROP NOT NULL;

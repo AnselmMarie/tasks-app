@@ -1,3 +1,4 @@
+import { relations } from 'drizzle-orm';
 import {
   text,
   timestamp,
@@ -71,11 +72,11 @@ export const userRefreshTokenTable = pgTable('user_refresh_token', {
 });
 
 export interface StoryTableInter {
-  id: string;
+  id?: string;
   name: string;
   userId: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export const storyTable = pgTable('story', {
@@ -92,6 +93,10 @@ export const storyTable = pgTable('story', {
     .notNull(),
 });
 
+export const storyRelations = relations(storyTable, ({ many }) => ({
+  tasks: many(taskTable),
+}));
+
 export interface TaskTableInter {
   id: string;
   name: string;
@@ -99,12 +104,12 @@ export interface TaskTableInter {
   buildType: BuildTypeEnum;
   amount: number;
   userId: string;
-  storyId: string;
+  storyId?: string;
   createdAt: string;
   updatedAt: string;
 }
 
-export const task_table = pgTable('task', {
+export const taskTable = pgTable('task', {
   id: uuid('id').defaultRandom().primaryKey().notNull(),
   name: varchar('name', { length: 150 }).notNull(),
   isCompleted: boolean('is_completed').default(false).notNull(),
@@ -113,9 +118,7 @@ export const task_table = pgTable('task', {
   userId: uuid('user_id')
     .references(() => userTable.id, { onDelete: 'cascade' })
     .notNull(),
-  storyId: uuid('story_id')
-    .references(() => storyTable.id, { onDelete: 'cascade' })
-    .notNull(),
+  storyId: uuid('story_id').references(() => storyTable.id, { onDelete: 'cascade' }),
   createdAt: timestamp('created_at', { precision: 3, withTimezone: true, mode: 'string' })
     .defaultNow()
     .notNull(),

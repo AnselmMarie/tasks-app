@@ -10,7 +10,7 @@ const userLoginSchema = z.object({
 });
 
 interface UserLoginValidateProps {
-  body: UserTableInter;
+  body: Partial<UserTableInter>;
 }
 
 /**

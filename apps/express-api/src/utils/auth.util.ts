@@ -8,6 +8,8 @@ export const accessExpireTime = '30m';
 export const refreshExpireTime = '1d';
 export const refreshExpireTimeObj = { day: 1 };
 
+// @todo need to figure out the jwt typing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface CreateJWTInter {
   accessToken: any;
   refreshToken: any;
@@ -51,7 +53,7 @@ const authExistMiddleware = async (req: Request, res: Response, next: NextFuncti
         throw await generateManualError('2005333', 'AUTH');
       }
 
-      req.globalData.accessTokenReq = token;
+      req.accessTokenReq = token;
       next();
     } catch (err) {
       res.status(401).send(err || (await generateManualError('2005123', 'AUTH')));
@@ -76,7 +78,7 @@ const authRefreshExistMiddleware = async (req: Request, res: Response, next: Nex
         throw await generateManualError('2005333', 'AUTH');
       });
 
-      req.globalData.refreshTokenReq = {
+      req.refreshTokenReq = {
         decoded: token.errorType ? null : token,
         token: refreshHeader,
       };

@@ -22,6 +22,8 @@ const useDateLogic = (
     name,
   });
 
+  // @todo I'll fix this later
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const setISOFormat = (value: any) => {
     return value ? value : DateTime.fromJSDate(minDate).toISO();
   };

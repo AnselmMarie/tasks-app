@@ -64,5 +64,7 @@ const Story: Meta<typeof UiInput> = {
 export default Story;
 
 export const Primary = {
+  // @todo I'll fix this later
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   render: (args: any) => <UiInput {...args} />,
 };

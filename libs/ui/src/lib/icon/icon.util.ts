@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 import {
   IconFilter,
   IconPlus,
@@ -44,6 +42,7 @@ import {
   IconBoltOff,
 } from '@tamagui-icons/icon-tabler';
 
+// @todo I'll fix this later
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getIconsUtil = (name: string): any => {
   switch (name) {

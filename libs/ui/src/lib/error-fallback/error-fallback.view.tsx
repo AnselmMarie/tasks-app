@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import { ReactElement } from 'react';
 
 import { GenericNonReturnType } from '@tasks-app/models';
 import ErrorBoundary from 'react-native-error-boundary';
