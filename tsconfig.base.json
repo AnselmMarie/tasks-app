@@ -17,12 +17,14 @@
     "baseUrl": ".",
     "paths": {
       "@tamagui-icons/icon-tabler": ["packages/icon-tabler/src/index.ts"],
+      "@tasks-app/base": ["libs/features/base/src/index.ts"],
       "@tasks-app/models": ["libs/models/src/index.ts"],
       "@tasks-app/models-react": ["libs/models-react/src/index.ts"],
       "@tasks-app/services": ["libs/services/src/index.ts"],
       "@tasks-app/store-react-query": ["libs/store-react-query/src/index.ts"],
       "@tasks-app/store-rtk": ["libs/store-rtk/src/index.ts"],
-      "@tasks-app/tasks": ["libs/features/tasks/src/index.ts"],
+      "@tasks-app/story": ["libs/features/story/src/index.ts"],
+      "@tasks-app/task": ["libs/features/task/src/index.ts"],
       "@tasks-app/ui": ["libs/ui/src/index.ts"],
       "@tasks-app/utils": ["libs/utils/src/index.ts"],
       "@tasks-app/utils-react": ["libs/utils-react/src/index.ts"]
