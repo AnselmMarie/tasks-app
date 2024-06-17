@@ -61,6 +61,12 @@
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
       }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "playwright:e2e"
+      }
     }
   ],
   "targetDefaults": {
@@ -77,7 +83,18 @@
   "generators": {
     "@nx/react": {
       "library": {
+        "style": "tailwind",
+        "linter": "eslint",
         "unitTestRunner": "jest"
+      },
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "rspack"
+      },
+      "component": {
+        "style": "tailwind"
       }
     }
   }
